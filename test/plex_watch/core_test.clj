@@ -2,6 +2,8 @@
   (:require [clojure.test :refer :all]
             [plex-watch.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest is_video?_test
+  (testing "test.avi is a video"
+    (is (= (is_video? "test.avi") true))
+  (testing "test.txt is not a video"
+    (is (= (is_video? "test.txt") false)))))
