@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [hawk "0.2.4"]]
+                 [hawk "0.2.4"]
+                 [sonian/carica "1.1.0" :exclusions [[cheshire]]]]
   :main ^:skip-aot plex-watch.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

@@ -1,6 +1,7 @@
 (ns plex-watch.core
   (:gen-class)
-  (:require [hawk.core :as hawk]))
+  (:require [hawk.core :as hawk]
+            [carica.core :refer [config]]))
 
 (defn is_video? [filename]
   (some? (re-matches #".*\.mkv|.*\.mp4|.*\.avi" filename)))
