@@ -1,7 +1,7 @@
 (ns plex-watch.core
   (:gen-class)
   (:require [hawk.core :as hawk]
-            [carica.core :refer [config]]
+            [plex-watch.config :refer [config]]
             [clj-http.client :as client]))
 
 (defn is_video? [filename]
@@ -22,7 +22,7 @@
   ctx)
 
 (defn watch []
-  (hawk/watch! [{:paths ["/home/dhosterman"]
+  (hawk/watch! [{:paths (config :paths)
                  :filter (and hawk/file? hawk/created?)
                  :handler watch_handler}]))
 
